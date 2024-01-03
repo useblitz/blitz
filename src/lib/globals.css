@@ -11,6 +11,11 @@
   background-color: #0a0a0a;
 }
 
+:root::selection {
+  background-color: white;
+  color: #171717;
+}
+
 a:hover {
   text-decoration: underline;
 }

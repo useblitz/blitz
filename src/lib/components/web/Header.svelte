@@ -15,6 +15,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
+    user-select: none;
   }
 
   header > a {
