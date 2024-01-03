@@ -1,3 +1,3 @@
 # blitz
 
-A webapp for learning &amp; teaching concepts visually.
+The platform for learning &amp; teaching concepts visually.
