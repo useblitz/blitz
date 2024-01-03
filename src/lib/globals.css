@@ -1,13 +1,16 @@
 @font-face {
   font-family: "Mackinac";
-  src: url("/font/mackinac.woff2") format("woff2");
-  font-style: normal;
+  src: url("/font/mackinac.woff2");
   font-weight: 600;
 }
 
 :root {
-  --font-head: "Mackinac", "DM Sans Variable", system-ui, sans-serif;
-
   font-family: "DM Sans Variable", system-ui, sans-serif;
   scroll-behavior: smooth;
+  color: white;
+  background-color: #0a0a0a;
+}
+
+a:hover {
+  text-decoration: underline;
 }

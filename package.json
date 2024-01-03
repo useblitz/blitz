@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "vite dev --host --open",
+    "dev": "vite dev --host",
     "build": "vite build",
-    "preview": "vite preview --host --open",
+    "preview": "vite preview --host",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },
@@ -21,6 +21,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@fontsource-variable/dm-sans": "^5.0.3"
+    "@fontsource-variable/dm-sans": "^5.0.3",
+    "@unocss/reset": "^0.58.3"
   }
 }
