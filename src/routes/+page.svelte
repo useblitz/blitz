@@ -5,10 +5,10 @@
 </script>
 
 <main>
-  <h1>Learn complex concepts visually, faster than ever before.</h1>
+  <h1>Learn & teach complex concepts visually</h1>
   <p>
-    Blitz is a platform where you can teach & learn anything with beatiful yet
-    concise visual animations.
+    Blitz is a platform where you can teach & learn anything with beatiful
+    visual animations.
   </p>
   <div>
     <a href="/signup">Let's Go &rarr;</a>
@@ -18,7 +18,8 @@
 
 <style>
   main {
-    padding: 8rem;
+    padding: 2rem;
+    padding-top: 0rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -28,6 +29,10 @@
     font-size: 3.75rem;
     line-height: 1;
     font-family: "Mackinac", system-ui, sans-serif;
+  }
+
+  main > h1:after {
+    content: ".";
   }
 
   main > p {
@@ -52,5 +57,31 @@
 
   div > a:hover {
     text-decoration: none;
+  }
+
+  @media (min-width: 768px) {
+    main {
+      padding: 4rem;
+    }
+
+    main > h1:after {
+      content: ", faster than ever before.";
+    }
+
+    main > p:after {
+      content: " There's no skills required to create - just drag, drop and type to create engaging, interactive content that anyone can learn from.";
+    }
+  }
+
+  @media (min-width: 1280px) {
+    main {
+      padding: 8rem;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    main {
+      padding: 16rem;
+    }
   }
 </style>
