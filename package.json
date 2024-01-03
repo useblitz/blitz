@@ -21,7 +21,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@fontsource-variable/dm-sans": "^5.0.3",
-    "@fontsource/dm-serif-display": "^5.0.18"
+    "@fontsource-variable/dm-sans": "^5.0.3"
   }
 }
