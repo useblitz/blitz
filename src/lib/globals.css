@@ -1,0 +1,6 @@
+:root {
+  --font-head: "DM Serif Display", "DM Sans Variable", system-ui, sans-serif
+
+  font-family: "DM Sans Variable", system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
