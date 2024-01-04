@@ -50,9 +50,13 @@
 
   div > a:nth-of-type(1) {
     padding: 0.5rem 1rem;
-    border-radius: 100rem;
+    border-radius: 0.375rem;
     color: #171717;
     background-color: white;
+  }
+
+  div > a {
+    color: white;
   }
 
   div > a:hover {

@@ -25,6 +25,7 @@
     font-family: "Mackinac", system-ui, sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
+    color: white;
   }
 
   header > a:hover {
@@ -53,6 +54,7 @@
 
     nav > a {
       font-weight: 600;
+      color: white;
     }
 
     nav > a:nth-of-type(4) {
@@ -63,7 +65,7 @@
 
     nav > a:last-of-type {
       padding: 0.2rem 0.8rem;
-      border-radius: 100rem;
+      border-radius: 0.375rem;
       color: #171717;
       background-color: white;
     }
