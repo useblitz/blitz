@@ -5,7 +5,7 @@
 </script>
 
 <main>
-  <form>
+  <form method="POST">
     <h2>Create an Account</h2>
     <div>
       <label for="email">Your email:</label>
