@@ -24,14 +24,21 @@
             pocketbase
         );
         if (success) {
-            await fetch("", {
+            fetch("", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json",
                 },
                 body: JSON.stringify(msg),
-            });
+            })
+                .then((res) => {
+                    console.log("Creating cookie");
+                    res.json();
+                })
+                .then((res) => {
+                    console.log(res);
+                });
             successMsg = true;
             message = "Logged in successfully!";
         } else {
@@ -50,9 +57,9 @@
             <p style="color: {successMsg ? '#00ff00' : '#ff0000'}">{message}</p>
         {/if}
         <div>
-            <label for="email">Your email:</label>
+            <label for="email">Your email or username:</label>
             <input
-                type="email"
+                type="text"
                 name="email"
                 placeholder="email@domain.com"
                 required

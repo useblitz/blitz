@@ -21,3 +21,24 @@ export async function login(
         },
     };
 }
+
+export async function register(username: string, email: string, password: string, passwordConfirm: string, pb: PocketBase): Promise<{ success: boolean; msg: any }> {
+    if (password !== passwordConfirm) {
+        return { success: false, msg: "Passwords do not match" };
+    }
+
+    try {
+        await pb.collection("users").create({
+            username,
+            email,
+            password,
+            passwordConfirm,
+        });
+    } catch (err) {
+        return { success: false, msg: err };
+    }
+
+    // TODO: Send email verification
+
+    return { success: true, msg: "User created" };
+}
