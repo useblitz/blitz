@@ -1,13 +1,5 @@
 <script lang="ts">
   import { pageTitle } from "$lib/globals";
-  import { writeable } from "svelte/store";
-  import PocketBase from "pocketbase";
-
-  let pb = writeable(new PocketBase());
-
-  pb.subscribe((value) => {
-    pb = value;
-  })
 
   pageTitle.set("Learn Concepts Faster");
 </script>

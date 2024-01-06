@@ -1,8 +1,9 @@
-import { getTokenPayload } from "pocketbase";
+import PocketBase, { getTokenPayload } from "pocketbase";
 
 export async function login(
   user: string,
-  password: string
+  password: string,
+  pb: PocketBase,
 ): Promise<{ success: boolean; msg: any }> {
   try {
     await pb.collection("users").authWithPassword(user, password);
@@ -19,8 +20,4 @@ export async function login(
       expires: new Date(payload.exp * 1000),
     },
   };
-}
-
-export function logout() {
-  pb.authStore.clear();
 }

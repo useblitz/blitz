@@ -1,12 +1,50 @@
-<script>
+<script lang="ts">
+  import PocketBase from "pocketbase";
+
   import { pageTitle } from "$lib/globals";
+  import { login } from "$lib/api/auth";
+  import { pb } from "../stores";
+
+  let pocketbase: PocketBase;
+  let message = "";
+  let successMsg = true;
+
+  pb.subscribe((v) => {
+    pocketbase = v;
+  });
+
+  async function onSubmit(e: SubmitEvent) {
+    const formData = new FormData(e.target as HTMLFormElement);
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    const { success, msg } = await login(email as string, password as string, pocketbase);
+    if (success) {
+      await fetch("", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(msg),
+      });
+      successMsg = true;
+      message = "Logged in successfully!";
+    } else {
+      successMsg = false;
+      message = "Failed to login!"
+    }
+  }
 
   pageTitle.set("Login");
 </script>
 
 <main>
-  <form method="POST">
+  <form on:submit|preventDefault={onSubmit}>
     <h2>Login</h2>
+    {#if message}
+      <p style="color: {successMsg ? '#00ff00' : '#ff0000'}">{message}</p>
+    {/if}
     <div>
       <label for="email">Your email:</label>
       <input
