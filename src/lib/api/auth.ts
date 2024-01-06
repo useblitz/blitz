@@ -1,4 +1,3 @@
-import { pb } from "$lib/globals";
 import { getTokenPayload } from "pocketbase";
 
 export async function login(
