@@ -1,25 +1,36 @@
 @font-face {
-    font-family: "Mackinac";
-    src: url("/font/mackinac.woff2");
-    font-weight: 600;
+  font-family: "Mackinac";
+  src: url("/fonts/mackinac.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
 }
 
 :root {
-    font-family: "DM Sans Variable", system-ui, sans-serif;
-    scroll-behavior: smooth;
-    color: white;
-    background-color: #0a0a0a;
+  font-family: "Space Grotesk Variable", system-ui, sans-serif;
+  scroll-behavior: smooth;
+  color: #ffffff;
+  background-color: #0a0a0a;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Mackinac", system-ui, sans-serif;
+  }
+
+  a {
+    color: #60a5fa;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 :root::selection {
-    background-color: white;
-    color: #171717;
-}
-
-a {
-    color: #60a5fa;
-}
-
-a:hover {
-    text-decoration: underline;
+  color: #0a0a0a;
+  background-color: #ffffff;
 }

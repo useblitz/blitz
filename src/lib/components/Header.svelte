@@ -32,7 +32,7 @@
     text-decoration: none;
   }
 
-  a > img {
+  header > a > img {
     height: 2rem;
     object-fit: contain;
   }
@@ -41,7 +41,11 @@
     display: none;
   }
 
-  @media (min-width: 768px) {
+  header > nav > a:hover {
+    text-decoration: none;
+  }
+
+  @media (min-width: 1024px) {
     header {
       justify-content: space-between;
     }
@@ -52,25 +56,25 @@
       gap: 1.2rem;
     }
 
-    nav > a {
+    header > nav > a {
       font-weight: 600;
       color: white;
     }
 
-    nav > a:nth-of-type(4) {
+    header > nav > a:nth-of-type(4) {
       padding-left: 1.7rem;
       margin-left: 0.5rem;
       border-left: solid 1px #404040;
     }
 
-    nav > a:last-of-type {
+    header > nav > a:last-of-type {
       padding: 0.2rem 0.8rem;
       border-radius: 0.375rem;
       color: #171717;
       background-color: white;
     }
 
-    nav > a:last-of-type:hover {
+    header > nav > a:last-of-type:hover {
       text-decoration: none;
     }
   }
