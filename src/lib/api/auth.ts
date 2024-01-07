@@ -1,4 +1,5 @@
 import PocketBase, { getTokenPayload } from "pocketbase";
+import { isUserLoggedIn } from "$lib/globals";
 
 export async function login(
   username: string,
@@ -12,6 +13,7 @@ export async function login(
   }
 
   let payload = getTokenPayload(db.authStore.token);
+  isUserLoggedIn.set(true);
 
   return {
     success: true,
@@ -38,7 +40,7 @@ export async function register(
       username,
       email,
       password,
-      confirm,
+      passwordConfirm: confirm,
     });
   } catch (err) {
     return { success: false, msg: err };
@@ -64,4 +66,16 @@ export async function register(
   // todo: email verification
 
   return { success: true, msg: "" };
+}
+
+export async function logout(db: PocketBase): Promise<{ success: boolean }> {
+  try {
+    await fetch("/", { method: "POST" });
+    isUserLoggedIn.set(false);
+    db.authStore.clear();
+  } catch (err) {
+    return { success: false };
+  }
+
+  return { success: true };
 }
