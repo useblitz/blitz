@@ -1,11 +1,7 @@
 image: gitpod/workspace-full
 
 tasks:
-  - name: Setup Bun
-    command: curl -fsSL https://bun.sh/install | bash
-
-  - name: Setup Project
-    command: bun install
-
-  - name: Run Server
+  - name: Setup/Install
+    before: curl -fsSL https://bun.sh/install | bash
+    init: bun install
     command: bun --bun dev -- --open
